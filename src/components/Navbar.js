@@ -10,7 +10,7 @@ import Img from 'gatsby-image'
 
 
 // js
-import links from '../constants/links'
+import links from '../constants/Links'
 
 
 // data
