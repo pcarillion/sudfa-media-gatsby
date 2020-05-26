@@ -25,7 +25,7 @@ query{
           auteur{nom}
           presentation{presentation}
           photoPrincipale{
-            fluid{...GatsbyContentfulFluid_tracedSVG}
+            fluid{...GatsbyContentfulFluid}
           }
         }
       }
