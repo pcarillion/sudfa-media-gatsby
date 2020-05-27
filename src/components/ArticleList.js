@@ -27,7 +27,7 @@ const ArticleList = ({articles}) => {
             </div>
             <div className={styles.article2}>
                 {/* <div className={styles.secondImage}></div> */}
-                <BackgroundImage className={styles.secondImage} fluid={articles[0].node.photoPrincipale.fluid}/>
+                <BackgroundImage className={styles.secondImage} fluid={articles[1].node.photoPrincipale.fluid}/>
                 <div className={styles.secondContent}>
                     <h2>{articles[1].node.titre}</h2>
                     <p className={styles.dateAndAuthor}>{articles[1].node.dateDePublication} - par {articles[1].node.auteur.nom}</p>
@@ -36,7 +36,7 @@ const ArticleList = ({articles}) => {
             </div>
             <div className={styles.article3}>
             {/* <div className={styles.secondImage}></div> */}
-            <BackgroundImage className={styles.secondImage} fluid={articles[0].node.photoPrincipale.fluid}/>
+            <BackgroundImage className={styles.secondImage} fluid={articles[2].node.photoPrincipale.fluid}/>
                 <div className={styles.secondContent}>
                     <h2>{articles[2].node.titre}</h2>
                     <p className={styles.dateAndAuthor}>{articles[2].node.dateDePublication} - par {articles[2].node.auteur.nom}</p>
@@ -45,14 +45,14 @@ const ArticleList = ({articles}) => {
             </div>
             <div className={styles.article4}>
                 {/* <div className={styles.secondImage}></div>             */}
-                <BackgroundImage className={styles.secondImage} fluid={articles[0].node.photoPrincipale.fluid}/>
+                <BackgroundImage className={styles.secondImage} fluid={articles[3].node.photoPrincipale.fluid}/>
 
                 <h2>{articles[3].node.titre}</h2>
                 <p className={styles.dateAndAuthor}>{articles[3].node.dateDePublication} - par {articles[3].node.auteur.nom}</p>
             </div>
             <div className={styles.article5}>
                 {/* <div className={styles.secondImage}></div>             */}
-                <BackgroundImage className={styles.secondImage} fluid={articles[0].node.photoPrincipale.fluid}/>
+                <BackgroundImage className={styles.secondImage} fluid={articles[4].node.photoPrincipale.fluid}/>
 
                 <h2>{articles[4].node.titre}</h2>
                 <p className={styles.dateAndAuthor}>{articles[4].node.dateDePublication} - par {articles[4].node.auteur.nom}</p>

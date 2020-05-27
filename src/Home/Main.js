@@ -21,6 +21,7 @@ query{
         node{
           titre
           slug
+          categorie
           dateDePublication(formatString:"DD/MM/YYYY")
           auteur{nom}
           presentation{presentation}

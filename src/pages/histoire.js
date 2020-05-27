@@ -1,4 +1,5 @@
 import React from 'react'
+import {graphql, useStaticQuery} from "gatsby"
 
 
 // js
@@ -9,15 +10,49 @@ import ArticleList2 from '../components/ArticleList2'
 // css
 import styles from '../css/category.module.css'
 
+const getData = graphql`
+query{
+    mainArticles : allContentfulArticle(limit:5, sort:{fields:dateDePublication, order:DESC}, filter:{categorie:{eq:"Culture"}}){
+      edges{
+        node{
+          titre
+          dateDePublication(formatString:"DD/MM/YYYY")
+          auteur{nom}
+          presentation{presentation}
+          photoPrincipale{
+            fluid{src}
+          }
+        }
+      }
+    }
+    otherArticles : allContentfulArticle(skip:5, sort:{fields:dateDePublication, order:DESC}, filter:{categorie:{eq:"Culture"}}){
+        edges{
+          node{
+            titre
+            dateDePublication(formatString:"DD/MM/YYYY")
+            auteur{nom}
+            presentation{presentation}
+            photoPrincipale{
+              fluid{src}
+            }
+          }
+        }
+      }
+  }
+  `
+
 const Histoire = () => {
+
+    const {mainArticles, otherArticles} = useStaticQuery(getData)
+
     return (
         <Layout>
             <div className={styles.container}>
                 <h1>Histoire</h1>
                 <p className={styles.presentation}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in felis elit. Cras gravida placerat dui, vel eleifend felis convallis ut. Sed cursus ornare dignissim. Praesent venenatis magna nec sollicitudin commodo. Fusce ex libero, ultrices consequat posuere non, volutpat nec nunc. </p>
                 <div className={styles.line}></div>
-                <ArticleList/>
-                <ArticleList2/>
+                <ArticleList articles={mainArticles.edges}/>
+                <ArticleList2 data={otherArticles}/>
             </div>
         </Layout>
     )
