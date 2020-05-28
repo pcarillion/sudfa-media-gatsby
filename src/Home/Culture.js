@@ -4,6 +4,7 @@ import {graphql, useStaticQuery} from 'gatsby'
 
 // plugins
 import BackgroundImage from 'gatsby-background-image'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 // js
 
@@ -21,7 +22,7 @@ query{
         auteur{nom}
         presentation{presentation}
         photoPrincipale{
-          fluid{src}
+          fluid{...GatsbyContentfulFluid}
         }
       }
     }
@@ -36,7 +37,9 @@ const {articles} = useStaticQuery(getData)
     return (
         <section className={styles.cultureSection}>
                 <div className={styles.sectionTitleDiv}>
-                    <h2 className={styles.sectionTitle}>Culture</h2>
+                    <AniLink paintDrip hex="black" duration={0.5} to='/culture'>
+                      <h2 className={styles.sectionTitle}>Culture</h2>
+                    </AniLink>
                     <div className={styles.lineDiv}></div>
                 </div>
                 <div className="row-evenly-start">
@@ -59,7 +62,9 @@ const {articles} = useStaticQuery(getData)
                 </div>
                 <div className="row-evenly-center">
                     <div className={styles.lineDiv}></div>
-                    <p className={styles.voirPlus}>Voir plus</p>
+                    <AniLink paintDrip hex="black" duration={0.5} to='/culture'>
+                      <p className={styles.voirPlus}>Voir plus</p>
+                    </AniLink>
                 </div>
         </section>
     )

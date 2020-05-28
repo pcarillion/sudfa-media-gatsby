@@ -1,16 +1,19 @@
 import React from 'react'
 import {graphql, useStaticQuery} from 'gatsby'
 
-import styles from '../css/navbar.module.css'
 
 
 // plugins
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import Img from 'gatsby-image'
+import {FaFacebook, FaTwitter} from 'react-icons/fa'
 
 
 // js
 import links from '../constants/Links'
+
+// css
+import styles from '../css/navbar.module.css'
 
 
 // data
@@ -43,7 +46,11 @@ const Navbar = () => {
                     <h1 className={styles.mainTitle}>{site.siteMetadata.title}</h1>
                     <p className={styles.mainDescription}>{site.siteMetadata.description}</p>
                 </div>
-                <div className={styles.socialMediaDiv}>Social Media</div>
+                <div className={styles.socialMediaDiv}>
+                    <FaFacebook className={styles.icon}/>
+                    <FaTwitter className={styles.icon}/>
+                    <div className={styles.mediapart}></div>
+                </div>
             </div>
             <div className={styles.navMenu}>
                 <ul className='row-evenly-center full-width list-no-dec full-width'>

@@ -3,6 +3,8 @@ import React from 'react'
 import {graphql, useStaticQuery} from "gatsby"
 
 // plugins
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 // js
 
@@ -12,7 +14,7 @@ import styles from '../css/index.module.css'
 const getData = graphql`
 query{
     presentation:contentfulPresentation(titre:{eq:"Les éditeurs"}){
-      versionCourte{versionCourte}
+      versionCourte{json}
     }
   }
 `
@@ -25,13 +27,17 @@ const Editeurs = () => {
     return (
         <section className={styles.editorSection}>
                 <div className={styles.sectionTitleDiv}>
-                    <h2 className={styles.sectionTitle}>Les éditeurs</h2>
+                    <AniLink paintDrip hex="black" duration={0.5} to='/about'>
+                        <h2 className={styles.sectionTitle}>Les éditeurs</h2>
+                    </AniLink>
                     <div className={styles.lineDiv}></div>
                 </div>
-                <p className={styles.editeursContent}>{presentation.versionCourte.versionCourte}</p>
+                <p className={styles.editeursContent}>{documentToReactComponents(presentation.versionCourte.json)}</p>
                 <div className="row-evenly-center">
                     <div className={styles.lineDiv}></div>
-                    <p className={styles.voirPlus}>Voir plus</p>
+                    <AniLink paintDrip hex="black" duration={0.5} to='/about'>
+                        <p className={styles.voirPlus}>Voir plus</p>
+                    </AniLink>
                 </div>
         </section>
     )

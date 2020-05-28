@@ -4,6 +4,7 @@ import {graphql, useStaticQuery} from 'gatsby'
 
 // plugins
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import BackgroundImage from 'gatsby-background-image'
 
 
 // js
@@ -11,13 +12,18 @@ import Layout from '../components/Layout'
 
 
 // css
-
+import styles from '../css/about.module.css'
 
 const getData = graphql`
 query{
     presentation:contentfulPresentation(titre:{eq:"Les éditeurs"}){
       versionLongue{json}
       titre
+      image{
+        fluid{
+          ...GatsbyContentfulFluid
+        }
+      }
     }
   }
 `
@@ -31,8 +37,11 @@ const About = () => {
 
     return (
         <Layout>
-            <h2>{presentation.titre}</h2>
-            <article>{documentToReactComponents(presentation.versionLongue.json)}</article>
+            <div className={styles.container}>
+              <h1>{presentation.titre}</h1>
+              <BackgroundImage className={styles.image} fluid={presentation.image.fluid}/>
+              <article>{documentToReactComponents(presentation.versionLongue.json)}</article>
+            </div>
         </Layout>
     )
 }

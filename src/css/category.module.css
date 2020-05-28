@@ -139,3 +139,7 @@ h2 {
 .article-suite:last-child {
     border-bottom: none;
 }
+
+.main-content {
+    margin-bottom: 10px;
+}
