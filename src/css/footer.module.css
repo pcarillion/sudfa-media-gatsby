@@ -66,6 +66,7 @@
 .copyright{
     padding: 10px 0 20px 0;
     border-bottom: 0.5px solid black;
+    white-space: nowrap;
 }
 
 .copyright-dev{

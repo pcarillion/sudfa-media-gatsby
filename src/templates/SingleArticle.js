@@ -24,10 +24,10 @@ const SingleArticle = ({data}) => {
         <Layout>
             <div className={styles.container}>
                 <h1>{titre}</h1>
-                <p>{dateDePublication} - par {auteur.nom} -  {categorie}</p>
+                <p className={styles.dateAndAuthor}>{dateDePublication} - par {auteur.nom} -  {categorie}</p>
                 <Img fluid={photoPrincipale.fluid}/>
                 <article>{documentToReactComponents(json)}</article>
-                <p>{auteur.nom}</p>
+                <p className={styles.signature}>{auteur.nom}</p>
                 <List2 data={data.autresArticles}/>
             </div>
         </Layout>

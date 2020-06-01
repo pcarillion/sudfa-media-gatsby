@@ -39,8 +39,8 @@ const About = () => {
         <Layout>
             <div className={styles.container}>
               <h1>{presentation.titre}</h1>
-              <BackgroundImage className={styles.image} fluid={presentation.image.fluid}/>
               <article>{documentToReactComponents(presentation.versionLongue.json)}</article>
+              <BackgroundImage className={styles.image} fluid={presentation.image.fluid}/>
             </div>
         </Layout>
     )

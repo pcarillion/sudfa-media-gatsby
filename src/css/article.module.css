@@ -6,15 +6,16 @@
 .container > h1 {
     margin: 20px 80px;
     font-size: 45px;
+    font-style: italic;
 }
 
-.container >p {
+.date-and-author {
     margin: 20px 0;
     font-size: 19px;
     width: 100%;
     text-align: center;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    border-top: 1px solid var(--darkGrey);
+    border-bottom: 1px solid var(--darkGrey);
     padding: 5px;
 }
 
@@ -22,3 +23,40 @@ article * {
     margin: 20px 80px;
     font-size: 19px;
 }
+
+.signature {
+    border: none;
+    width: 100%;
+    text-align: start;
+    margin: 20px 0;
+    font-size: 19px;
+    font-style: italic;
+    margin-left: 80px;
+}
+
+@media screen and (max-width: 640px) {
+
+    .container {
+        width: 90%;
+        margin: 10px 5vw;
+    }
+
+    .container > h1 {
+        margin: 10px ;
+        font-size: 25px;
+    }
+    
+    .container > p:first-of-type {
+        font-size: 15px;
+    }
+
+    article * {
+        margin: 20px 0;
+        font-size: 19px;
+    }
+
+    .signature {
+        margin-left: 0;
+    }
+}
+

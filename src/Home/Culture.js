@@ -18,6 +18,7 @@ query{
     edges{
       node{
         titre
+        slug
         dateDePublication(formatString:"DD/MM/YYYY")
         auteur{nom}
         presentation{presentation}
@@ -44,17 +45,25 @@ const {articles} = useStaticQuery(getData)
                 </div>
                 <div className={styles.cultureArticles}>
                     <div className={styles.cultureArticle}>
-                        <BackgroundImage className={styles.cultureImage} fluid={articles.edges[0].node.photoPrincipale.fluid}/>
+                        <AniLink paintDrip hex="black" duration={0.5} to={`/article/${articles.edges[0].node.slug}`}>
+                          <BackgroundImage className={styles.cultureImage} fluid={articles.edges[0].node.photoPrincipale.fluid}/>
+                        </AniLink>
                         <div>
-                            <h3>{articles.edges[0].node.titre}</h3>
+                            <AniLink paintDrip hex="black" duration={0.5} to={`/article/${articles.edges[0].node.slug}`}>
+                              <h3 className={styles.cultureArticleTitle}>{articles.edges[0].node.titre}</h3>
+                            </AniLink>
                             <p className={styles.articleDateAndAuthor}>{articles.edges[0].node.dateDePublication} - par {articles.edges[0].node.auteur.nom}</p>
                             <p>{articles.edges[0].node.presentation.presentation}</p>
                         </div>
                     </div>
                     <div className={styles.cultureArticle}>
-                        <BackgroundImage className={styles.cultureImage} fluid={articles.edges[1].node.photoPrincipale.fluid}/>
+                        <AniLink paintDrip hex="black" duration={0.5} to={`/article/${articles.edges[1].node.slug}`}>
+                          <BackgroundImage className={styles.cultureImage} fluid={articles.edges[1].node.photoPrincipale.fluid}/>
+                        </AniLink>
                         <div>
-                            <h3>{articles.edges[1].node.titre}</h3>
+                            <AniLink paintDrip hex="black" duration={0.5} to={`/article/${articles.edges[1].node.slug}`}>
+                              <h3 className={styles.cultureArticleTitle}>{articles.edges[1].node.titre}</h3>
+                            </AniLink>
                             <p className={styles.articleDateAndAuthor}>{articles.edges[1].node.dateDePublication} - par {articles.edges[1].node.auteur.nom}</p>
                             <p>{articles.edges[1].node.presentation.presentation}</p>
                         </div>

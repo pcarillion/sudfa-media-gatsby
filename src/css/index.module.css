@@ -169,7 +169,7 @@
     background-color: black;
 }
 
-.culture-section h2:hover{
+.culture-section h3:hover{
     text-decoration: underline;
 }
 
@@ -223,6 +223,15 @@
     }
     .main-article-content{
         width: 100%;
+        border-bottom: 0.5px solid var(--darkGrey);
+        padding-bottom: 10px;
+    }
+
+    .main-articles-content {
+        width: 100%;
+        margin: 0;
+        padding: 10px 0;
+        border-bottom: 0.5px solid var(--darkGrey);
     }
 
     .culture-articles {
