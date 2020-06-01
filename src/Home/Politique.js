@@ -38,7 +38,7 @@ const Politique = () => {
         <section className={styles.politiqueSection}>
                 <div className={styles.sectionTitleDiv}>
                     <AniLink paintDrip hex="black" duration={0.5} to='/politique'>
-                      <h3 className={styles.sectionTitle}>Politique</h3>
+                      <h2 className={styles.sectionTitle}>Politique</h2>
                     </AniLink>
                     <div className={styles.lineDiv}></div>
                 </div>

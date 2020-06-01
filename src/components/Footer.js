@@ -16,7 +16,7 @@ const Footer = () => {
     return (
         <div className={styles.footerDiv}>
             <div className={styles.linksDiv}>
-                <ul className='row-evenly-center full-width list-no-dec full-width'>
+                <ul className={`${styles.links} full-width list-no-dec full-width`}>
                     {links.map((item, i) => {
                         return (<li key={i} className={styles.navLink}>
                         <AniLink paintDrip hex="black" duration={0.5} to={item.path}>{item.text}</AniLink>
@@ -25,9 +25,13 @@ const Footer = () => {
                 </ul>
             </div>
             <div className={styles.socialMediaDiv}>
-                <FaFacebook className={styles.icon}/>
-                <FaTwitter className={styles.icon}/>
-                <div className={styles.mediapart}></div>
+                    <a className={styles.iconLink} href="https://www.facebook.com/Sudfa-%D8%B5%D8%AF%D9%81%D8%A9-2268469196753720/?ref=page_internal" target="_blank" rel="noreferrer">
+                        <FaFacebook className={styles.icon}/>
+                    </a>
+                    {/* <FaTwitter className={styles.icon}/> */}
+                    <a href="https://blogs.mediapart.fr/sudfa" target="_blank" rel="noreferrer">
+                        <div className={styles.mediapart}></div>
+                    </a>
             </div>
             <div className={styles.copyright}>
                 copyright &copy; Sudfa - 2020 - Tous droits réservés

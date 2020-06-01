@@ -11,6 +11,10 @@ import ArticleList2 from '../components/ArticleList2'
 // css
 import styles from '../css/category.module.css'
 
+// plugins
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
+
+
 
 const getData = graphql`
 query{
@@ -37,6 +41,7 @@ query{
             photoPrincipale{
               fluid{src}
             }
+            slug
           }
         }
       }

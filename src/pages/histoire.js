@@ -10,6 +10,10 @@ import ArticleList2 from '../components/ArticleList2'
 // css
 import styles from '../css/category.module.css'
 
+// plugins
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
+
+
 const getData = graphql`
 query{
     mainArticles : allContentfulArticle(limit:5, sort:{fields:dateDePublication, order:DESC}, filter:{categorie:{eq:"Culture"}}){
@@ -22,6 +26,7 @@ query{
           photoPrincipale{
             fluid{src}
           }
+          slug
         }
       }
     }

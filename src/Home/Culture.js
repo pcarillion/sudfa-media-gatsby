@@ -42,7 +42,7 @@ const {articles} = useStaticQuery(getData)
                     </AniLink>
                     <div className={styles.lineDiv}></div>
                 </div>
-                <div className="row-evenly-start">
+                <div className={styles.cultureArticles}>
                     <div className={styles.cultureArticle}>
                         <BackgroundImage className={styles.cultureImage} fluid={articles.edges[0].node.photoPrincipale.fluid}/>
                         <div>

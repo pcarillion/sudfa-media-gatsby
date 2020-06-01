@@ -36,6 +36,8 @@ body {
 a {
     text-decoration: none;
     color: black;
+    height: fit-content;
+    width: fit-content;
 }
 
 h1,
@@ -47,6 +49,7 @@ h6 {
   /* margin-bottom: 1.25rem; */
   /* letter-spacing: var(--mainSpacing); */
 }
+
 
 
 /* general classes */
@@ -90,5 +93,12 @@ h6 {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    align-items: start;
+}
+
+.row-between-start{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: start;
 }
