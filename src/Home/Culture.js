@@ -38,18 +38,18 @@ const {articles} = useStaticQuery(getData)
     return (
         <section className={styles.cultureSection}>
                 <div className={styles.sectionTitleDiv}>
-                    <AniLink paintDrip hex="black" duration={0.5} to='/culture'>
+                    <AniLink paintDrip hex="black" duration={0.8} to='/culture'>
                       <h2 className={styles.sectionTitle}>Culture</h2>
                     </AniLink>
                     <div className={styles.lineDiv}></div>
                 </div>
                 <div className={styles.cultureArticles}>
                     <div className={styles.cultureArticle}>
-                        <AniLink paintDrip hex="black" duration={0.5} to={`/article/${articles.edges[0].node.slug}`}>
+                        <AniLink paintDrip hex="black" duration={0.8} to={`/article/${articles.edges[0].node.slug}`}>
                           <BackgroundImage className={styles.cultureImage} fluid={articles.edges[0].node.photoPrincipale.fluid}/>
                         </AniLink>
                         <div>
-                            <AniLink paintDrip hex="black" duration={0.5} to={`/article/${articles.edges[0].node.slug}`}>
+                            <AniLink paintDrip hex="black" duration={0.8} to={`/article/${articles.edges[0].node.slug}`}>
                               <h3 className={styles.cultureArticleTitle}>{articles.edges[0].node.titre}</h3>
                             </AniLink>
                             <p className={styles.articleDateAndAuthor}>{articles.edges[0].node.dateDePublication} - par {articles.edges[0].node.auteur.nom}</p>
@@ -57,11 +57,11 @@ const {articles} = useStaticQuery(getData)
                         </div>
                     </div>
                     <div className={styles.cultureArticle}>
-                        <AniLink paintDrip hex="black" duration={0.5} to={`/article/${articles.edges[1].node.slug}`}>
+                        <AniLink paintDrip hex="black" duration={0.8} to={`/article/${articles.edges[1].node.slug}`}>
                           <BackgroundImage className={styles.cultureImage} fluid={articles.edges[1].node.photoPrincipale.fluid}/>
                         </AniLink>
                         <div>
-                            <AniLink paintDrip hex="black" duration={0.5} to={`/article/${articles.edges[1].node.slug}`}>
+                            <AniLink paintDrip hex="black" duration={0.8} to={`/article/${articles.edges[1].node.slug}`}>
                               <h3 className={styles.cultureArticleTitle}>{articles.edges[1].node.titre}</h3>
                             </AniLink>
                             <p className={styles.articleDateAndAuthor}>{articles.edges[1].node.dateDePublication} - par {articles.edges[1].node.auteur.nom}</p>
@@ -71,7 +71,7 @@ const {articles} = useStaticQuery(getData)
                 </div>
                 <div className="row-evenly-center">
                     <div className={styles.lineDiv}></div>
-                    <AniLink paintDrip hex="black" duration={0.5} to='/culture'>
+                    <AniLink paintDrip hex="black" duration={0.8} to='/culture'>
                       <p className={styles.voirPlus}>Voir plus</p>
                     </AniLink>
                 </div>

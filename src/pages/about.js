@@ -9,6 +9,7 @@ import BackgroundImage from 'gatsby-background-image'
 
 // js
 import Layout from '../components/Layout'
+import Contact from '../components/About/Contact'
 
 
 // css
@@ -41,6 +42,7 @@ const About = () => {
               <h1>{presentation.titre}</h1>
               <article>{documentToReactComponents(presentation.versionLongue.json)}</article>
               <BackgroundImage className={styles.image} fluid={presentation.image.fluid}/>
+              <Contact/>
             </div>
         </Layout>
     )

@@ -19,7 +19,7 @@ const Footer = () => {
                 <ul className={`${styles.links} full-width list-no-dec full-width`}>
                     {links.map((item, i) => {
                         return (<li key={i} className={styles.navLink}>
-                        <AniLink paintDrip hex="black" duration={0.5} to={item.path}>{item.text}</AniLink>
+                        <AniLink paintDrip hex="black" duration={0.8} to={item.path}>{item.text}</AniLink>
                         </li>)
                     })}
                 </ul>

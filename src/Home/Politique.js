@@ -37,38 +37,38 @@ const Politique = () => {
     return (
         <section className={styles.politiqueSection}>
                 <div className={styles.sectionTitleDiv}>
-                    <AniLink paintDrip hex="black" duration={0.5} to='/politique'>
+                    <AniLink paintDrip hex="black" duration={0.8} to='/politique'>
                       <h2 className={styles.sectionTitle}>Politique</h2>
                     </AniLink>
                     <div className={styles.lineDiv}></div>
                 </div>
                 <div className={styles.politiqueContent}>
-                  <AniLink paintDrip hex="black" duration={0.5} to={`/article/${articles.edges[0].node.slug}`}>
+                  <AniLink paintDrip hex="black" duration={0.8} to={`/article/${articles.edges[0].node.slug}`}>
                     <h3>{articles.edges[0].node.titre}</h3>
                     <p className={styles.articleDateAndAuthor}>{articles.edges[0].node.dateDePublication} - par {articles.edges[0].node.auteur.nom}</p>
                   </AniLink>
                 </div>
                 <div className={styles.politiqueContent}>
-                  <AniLink paintDrip hex="black" duration={0.5} to={`/article/${articles.edges[1].node.slug}`}>
+                  <AniLink paintDrip hex="black" duration={0.8} to={`/article/${articles.edges[1].node.slug}`}>
                     <h3>{articles.edges[1].node.titre}</h3>
                     <p className={styles.articleDateAndAuthor}>{articles.edges[1].node.dateDePublication} - par {articles.edges[1].node.auteur.nom}</p>
                   </AniLink>
                 </div>
                 <div className={styles.politiqueContent}>
-                  <AniLink paintDrip hex="black" duration={0.5} to={`/article/${articles.edges[2].node.slug}`}>
+                  <AniLink paintDrip hex="black" duration={0.8} to={`/article/${articles.edges[2].node.slug}`}>
                     <h3>{articles.edges[2].node.titre}</h3>
                     <p className={styles.articleDateAndAuthor}>{articles.edges[2].node.dateDePublication} - par {articles.edges[2].node.auteur.nom}</p>
                   </AniLink>
                 </div>
                 <div className={styles.politiqueContent}>
-                  <AniLink paintDrip hex="black" duration={0.5} to={`/article/${articles.edges[3].node.slug}`}>
+                  <AniLink paintDrip hex="black" duration={0.8} to={`/article/${articles.edges[3].node.slug}`}>
                     <h3>{articles.edges[3].node.titre}</h3>
                     <p className={styles.articleDateAndAuthor}>{articles.edges[3].node.dateDePublication} - par {articles.edges[3].node.auteur.nom}</p>
                   </AniLink>
                 </div>
                 <div className="row-evenly-center">
                     <div className={styles.lineDiv}></div>
-                    <AniLink paintDrip hex="black" duration={0.5} to='/politique'>
+                    <AniLink paintDrip hex="black" duration={0.8} to='/politique'>
                       <p className={styles.voirPlus}>Voir plus</p>
                     </AniLink>
                 </div>

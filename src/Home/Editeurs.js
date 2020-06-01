@@ -27,7 +27,7 @@ const Editeurs = () => {
     return (
         <section className={styles.editorSection}>
                 <div className={styles.sectionTitleDiv}>
-                    <AniLink paintDrip hex="black" duration={0.5} to='/about'>
+                    <AniLink paintDrip hex="black" duration={0.8} to='/about'>
                         <h2 className={styles.sectionTitle}>Les éditeurs</h2>
                     </AniLink>
                     <div className={styles.lineDiv}></div>
@@ -35,7 +35,7 @@ const Editeurs = () => {
                 <p className={styles.editeursContent}>{documentToReactComponents(presentation.versionCourte.json)}</p>
                 <div className="row-evenly-center">
                     <div className={styles.lineDiv}></div>
-                    <AniLink paintDrip hex="black" duration={0.5} to='/about'>
+                    <AniLink paintDrip hex="black" duration={0.8} to='/about'>
                         <p className={styles.voirPlus}>Voir plus</p>
                     </AniLink>
                 </div>

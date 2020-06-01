@@ -76,7 +76,7 @@ const Navbar = () => {
                 <ul className={isOpen?`${styles.navLinksToggled}`:`${styles.navLinks} ${styles.hiddenLinks}`}>
                     {links.map((item, i) => {
                         return (<li key={i} className={styles.navLink}>
-                        <AniLink paintDrip hex="black" duration={0.5} to={item.path}>{item.text}</AniLink>
+                        <AniLink paintDrip hex="black" duration={0.8} to={item.path}>{item.text}</AniLink>
                         </li>)
                     })}
                 </ul>
