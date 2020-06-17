@@ -21,24 +21,43 @@ query{
         node{
           titre
           dateDePublication(formatString:"DD/MM/YYYY")
-          auteur{nom}
           presentation{presentation}
           photoPrincipale{
             fluid{src}
           }
           slug
+          auteur{
+            nom
+            slug
+            description{description}
+            photo{
+              fluid {
+                ...GatsbyContentfulFluid
+              }
+            }
+          }
         }
       }
     }
-    otherArticles : allContentfulArticle(skip:5, sort:{fields:dateDePublication, order:DESC}, filter:{categorie:{eq:"Culture"}}){
+    otherArticles : allContentfulArticle(skip:5, sort:{fields:dateDePublication, order:DESC}, filter:{categorie:{eq:"Histoire"}}){
         edges{
           node{
             titre
             dateDePublication(formatString:"DD/MM/YYYY")
-            auteur{nom}
             presentation{presentation}
             photoPrincipale{
               fluid{src}
+            }
+            slug
+            auteur{
+              nom
+              slug
+              description{description}
+              photo{
+                fluid {
+                  ...GatsbyContentfulFluid
+                }
+              }
             }
           }
         }

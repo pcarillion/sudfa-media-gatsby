@@ -16,30 +16,49 @@ import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 const getData = graphql`
 query{
-    mainArticles : allContentfulArticle(limit:5, sort:{fields:dateDePublication, order:DESC}, filter:{categorie:{eq:"Politique au Soudan"}}){
+    mainArticles : allContentfulArticle(limit:5, sort:{fields:dateDePublication, order:DESC}, filter:{categorie:{eq:"Politique"}}){
       edges{
         node{
           titre
           dateDePublication(formatString:"DD/MM/YYYY")
-          auteur{nom}
           presentation{presentation}
           photoPrincipale{
             fluid{src}
           }
+          slug
+          auteur{
+            nom
+            slug
+            description{description}
+            photo{
+              fluid {
+                ...GatsbyContentfulFluid
+              }
+            }
+          }
         }
       }
     }
-    otherArticles : allContentfulArticle(skip:5, sort:{fields:dateDePublication, order:DESC}, filter:{categorie:{eq:"Politique au Soudan"}}){
+    otherArticles : allContentfulArticle(skip:5, sort:{fields:dateDePublication, order:DESC}, filter:{categorie:{eq:"Politique"}}){
         edges{
           node{
             titre
             dateDePublication(formatString:"DD/MM/YYYY")
-            auteur{nom}
             presentation{presentation}
             photoPrincipale{
               fluid{src}
             }
             slug
+            auteur{
+              nom
+              slug
+              description{description}
+              photo{
+                fluid {
+                  ...GatsbyContentfulFluid
+                }
+              }
+            }
           }
         }
       }
@@ -55,7 +74,7 @@ const Politique = () => {
     return (
         <Layout>
             <div className={styles.container}>
-                <h1>Politique au Soudan</h1>
+                <h1>Politique</h1>
                 <p className={styles.presentation}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in felis elit. Cras gravida placerat dui, vel eleifend felis convallis ut. Sed cursus ornare dignissim. Praesent venenatis magna nec sollicitudin commodo. Fusce ex libero, ultrices consequat posuere non, volutpat nec nunc. </p>
                 <div className={styles.line}></div>
                 <ArticleList articles={mainArticles.edges}/>

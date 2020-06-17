@@ -19,7 +19,16 @@
     padding: 5px;
 }
 
-article * {
+.author-span:hover{
+    text-decoration: underline;
+}
+
+
+.author-span:not(:last-child):after{
+    content:', ';
+}
+
+article > * {
     margin: 20px 80px;
     font-size: 19px;
 }

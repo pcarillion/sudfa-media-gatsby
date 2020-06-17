@@ -22,6 +22,10 @@
     margin: 10px 0;
 }
 
+.container a:hover {
+    text-decoration: underline;
+}
+
 .contact {
     width: 100%;
     display: flex;

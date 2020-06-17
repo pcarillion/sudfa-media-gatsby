@@ -25,6 +25,15 @@ h1 {
     margin: 10px 0 30px 0;
 }
 
+.author-span:hover{
+    text-decoration: underline;
+}
+
+.author-span:not(:last-child):after{
+    content:', ';
+}
+
+
 
 /* composant "articles list" */
 
@@ -126,6 +135,11 @@ h2 {
     display: flex;
     padding: 20px 0;
 }
+
+.article-suite h2:hover{
+    text-decoration: underline;
+}
+
 .article-suite > p:first-child {
     margin-right: 10px;
     min-width: 150px;

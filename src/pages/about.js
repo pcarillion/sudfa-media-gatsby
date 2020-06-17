@@ -17,7 +17,7 @@ import styles from '../css/about.module.css'
 
 const getData = graphql`
 query{
-    presentation:contentfulPresentation(titre:{eq:"Les éditeurs"}){
+    presentation:contentfulPresentation(titre:{eq:"Qui sommes nous?"}){
       versionLongue{json}
       titre
       image{
@@ -41,7 +41,7 @@ const About = () => {
             <div className={styles.container}>
               <h1>{presentation.titre}</h1>
               <article>{documentToReactComponents(presentation.versionLongue.json)}</article>
-              <BackgroundImage className={styles.image} fluid={presentation.image.fluid}/>
+              {presentation.image && <BackgroundImage className={styles.image} fluid={presentation.image.fluid}/>}
               <Contact/>
             </div>
         </Layout>

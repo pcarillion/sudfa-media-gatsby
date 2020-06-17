@@ -20,10 +20,20 @@ query{
         node{
           titre
           dateDePublication(formatString:"DD/MM/YYYY")
-          auteur{nom}
           presentation{presentation}
           photoPrincipale{
             fluid{src}
+          }
+          slug
+          auteur{
+            nom
+            slug
+            description{description}
+            photo{
+              fluid {
+                ...GatsbyContentfulFluid
+              }
+            }
           }
         }
       }
@@ -33,12 +43,21 @@ query{
           node{
             titre
             dateDePublication(formatString:"DD/MM/YYYY")
-            auteur{nom}
             presentation{presentation}
             photoPrincipale{
               fluid{src}
             }
             slug
+            auteur{
+              nom
+              slug
+              description{description}
+              photo{
+                fluid {
+                  ...GatsbyContentfulFluid
+                }
+              }
+            }
           }
         }
       }

@@ -62,6 +62,16 @@
     margin: 10px 0;
 }
 
+.author-span:hover{
+    text-decoration: underline;
+}
+
+
+.author-span:not(:last-child):after{
+    content:', ';
+}
+
+
 .voir-plus{
     white-space: nowrap;    
     text-align: right;

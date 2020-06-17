@@ -13,7 +13,7 @@ import styles from '../css/index.module.css'
 
 const getData = graphql`
 query{
-    presentation:contentfulPresentation(titre:{eq:"Les éditeurs"}){
+    presentation:contentfulPresentation(titre:{eq:"Qui sommes nous?"}){
       versionCourte{json}
     }
   }

@@ -10,6 +10,13 @@ exports.createPages = async ({graphql, actions}) => {
                     slug
                     categorie
         }}}
+        auteurs: allContentfulAuteur{
+            edges{
+              node{
+                slug
+              }
+            }
+          }
       }
     `)
 
@@ -26,5 +33,18 @@ exports.createPages = async ({graphql, actions}) => {
             
         })
     })
+
+    data.auteurs.edges.forEach(({node}) =>{
+        createPage({
+            path: `auteur/${node.slug}`,
+            component: path.resolve("./src/templates/Auteur.js"),
+            context:{
+                slug: node.slug,
+            },
+            
+        })
+    })
+
+
 
 }

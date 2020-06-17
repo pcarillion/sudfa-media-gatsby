@@ -4,12 +4,12 @@ export default [
         text: "Accueil"
     },
     {
-        path: '/soudanais-en-france/',
-        text: "Soudanais en France"
+        path: '/actualites-au-soudan/',
+        text: "Actualités au Soudan"
     },
     {
         path: '/politique/',
-        text: "Politique au Soudan"
+        text: "Politique"
     },
     {
         path: '/histoire/',

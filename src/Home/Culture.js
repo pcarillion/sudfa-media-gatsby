@@ -20,10 +20,19 @@ query{
         titre
         slug
         dateDePublication(formatString:"DD/MM/YYYY")
-        auteur{nom}
         presentation{presentation}
         photoPrincipale{
           fluid{...GatsbyContentfulFluid}
+        }
+        auteur{
+          nom
+          slug
+          description{description}
+          photo{
+            fluid {
+              ...GatsbyContentfulFluid
+            }
+          }
         }
       }
     }
@@ -52,7 +61,7 @@ const {articles} = useStaticQuery(getData)
                             <AniLink paintDrip hex="black" duration={0.8} to={`/article/${articles.edges[0].node.slug}`}>
                               <h3 className={styles.cultureArticleTitle}>{articles.edges[0].node.titre}</h3>
                             </AniLink>
-                            <p className={styles.articleDateAndAuthor}>{articles.edges[0].node.dateDePublication} - par {articles.edges[0].node.auteur.nom}</p>
+                            <p className={styles.articleDateAndAuthor}>{articles.edges[0].node.dateDePublication} - par {articles.edges[0].node.auteur.map((auteur, i) => {return(<AniLink to={`/auteur/${auteur.slug}`} className={styles.authorSpan} key={i}> {auteur.nom}</AniLink>)})}</p>
                             <p>{articles.edges[0].node.presentation.presentation}</p>
                         </div>
                     </div>
@@ -64,7 +73,7 @@ const {articles} = useStaticQuery(getData)
                             <AniLink paintDrip hex="black" duration={0.8} to={`/article/${articles.edges[1].node.slug}`}>
                               <h3 className={styles.cultureArticleTitle}>{articles.edges[1].node.titre}</h3>
                             </AniLink>
-                            <p className={styles.articleDateAndAuthor}>{articles.edges[1].node.dateDePublication} - par {articles.edges[1].node.auteur.nom}</p>
+                            <p className={styles.articleDateAndAuthor}>{articles.edges[1].node.dateDePublication} - par {articles.edges[1].node.auteur.map((auteur, i) => {return(<AniLink to={`/auteur/${auteur.slug}`} className={styles.authorSpan} key={i}> {auteur.nom}</AniLink>)})}</p>
                             <p>{articles.edges[1].node.presentation.presentation}</p>
                         </div>
                     </div>

@@ -26,7 +26,7 @@ const ArticleList = ({articles}) => {
                     <AniLink paintDrip hex="black" duration={0.8} to={`/article/${articles[0].node.slug}`}>
                         <h2 className={styles.link}>{articles[0].node.titre}</h2>
                     </AniLink>
-                    <p className={styles.dateAndAuthor}>{articles[0].node.dateDePublication} - par {articles[0].node.auteur.nom}</p>
+                    <p className={styles.dateAndAuthor}>{articles[0].node.dateDePublication} - par {articles[0].node.auteur.map((auteur, i) => {return(<AniLink paintDrip hex="black" duration={0.8} to={`/auteur/${auteur.slug}`} className={styles.authorSpan} key={i}> {auteur.nom}</AniLink>)})}</p>
                     <p>{articles[0].node.presentation.presentation}</p>
                 </div>
             </div>
@@ -39,7 +39,7 @@ const ArticleList = ({articles}) => {
                     <AniLink paintDrip hex="black" duration={0.8} to={`/article/${articles[1].node.slug}`}>
                         <h2 className={styles.link}>{articles[1].node.titre}</h2>
                     </AniLink>
-                    <p className={styles.dateAndAuthor}>{articles[1].node.dateDePublication} - par {articles[1].node.auteur.nom}</p>
+                    <p className={styles.dateAndAuthor}>{articles[1].node.dateDePublication} - par {articles[1].node.auteur.map((auteur, i) => {return(<AniLink paintDrip hex="black" duration={0.8} to={`/auteur/${auteur.slug}`} className={styles.authorSpan} key={i}> {auteur.nom}</AniLink>)})}</p>
                     <p>{articles[1].node.presentation.presentation}</p>
                 </div>
             </div>
@@ -52,7 +52,7 @@ const ArticleList = ({articles}) => {
                     <AniLink paintDrip hex="black" duration={0.8} to={`/article/${articles[2].node.slug}`}>
                         <h2 className={styles.link}>{articles[2].node.titre}</h2>
                     </AniLink>
-                    <p className={styles.dateAndAuthor}>{articles[2].node.dateDePublication} - par {articles[2].node.auteur.nom}</p>
+                    <p className={styles.dateAndAuthor}>{articles[2].node.dateDePublication} - par {articles[2].node.auteur.map((auteur, i) => {return(<AniLink paintDrip hex="black" duration={0.8} to={`/auteur/${auteur.slug}`} className={styles.authorSpan} key={i}> {auteur.nom}</AniLink>)})}</p>
                     <p>{articles[2].node.presentation.presentation}</p>
                 </div>
             </div>
@@ -64,7 +64,7 @@ const ArticleList = ({articles}) => {
                 <AniLink paintDrip hex="black" duration={0.8} to={`/article/${articles[3].node.slug}`}>
                     <h2 className={styles.link}>{articles[3].node.titre}</h2>
                 </AniLink>
-                <p className={styles.dateAndAuthor}>{articles[3].node.dateDePublication} - par {articles[3].node.auteur.nom}</p>
+                <p className={styles.dateAndAuthor}>{articles[3].node.dateDePublication} - par {articles[3].node.auteur.map((auteur, i) => {return(<AniLink paintDrip hex="black" duration={0.8} to={`/auteur/${auteur.slug}`} className={styles.authorSpan} key={i}> {auteur.nom}</AniLink>)})}</p>
             </div>
             <div className={styles.article5}>
                 {/* <div className={styles.secondImage}></div>             */}
@@ -74,7 +74,7 @@ const ArticleList = ({articles}) => {
                 <AniLink paintDrip hex="black" duration={0.8} to={`/article/${articles[4].node.slug}`}>
                     <h2 className={styles.link}>{articles[4].node.titre}</h2>
                 </AniLink>
-                <p className={styles.dateAndAuthor}>{articles[4].node.dateDePublication} - par {articles[4].node.auteur.nom}</p>
+                <p className={styles.dateAndAuthor}>{articles[4].node.dateDePublication} - par {articles[4].node.auteur.map((auteur, i) => {return(<AniLink paintDrip hex="black" duration={0.8} to={`/auteur/${auteur.slug}`} className={styles.authorSpan} key={i}> {auteur.nom}</AniLink>)})}</p>
             </div>
         </div>
     )

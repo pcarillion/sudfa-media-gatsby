@@ -66,6 +66,11 @@ h6 {
     list-style: none;
 }
 
+.author-span:not(:last-child):after{
+    content:',';
+}
+
+
 /* flex boxes */
 
 .column-evenly-center {

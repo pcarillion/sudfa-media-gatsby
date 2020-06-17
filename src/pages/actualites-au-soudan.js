@@ -18,37 +18,56 @@ import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 const getData = graphql`
 query{
-    mainArticles : allContentfulArticle(limit:5, sort:{fields:dateDePublication, order:DESC}, filter:{categorie:{eq:"Soudanais en France"}}){
+    mainArticles : allContentfulArticle(limit:5, sort:{fields:dateDePublication, order:DESC}, filter:{categorie:{eq:"Actualités au Soudan"}}){
       edges{
         node{
           titre
           dateDePublication(formatString:"DD/MM/YYYY")
-          auteur{nom}
           presentation{presentation}
           photoPrincipale{
             fluid{src}
           }
+          slug
+          auteur{
+            nom
+            slug
+            description{description}
+            photo{
+              fluid {
+                ...GatsbyContentfulFluid
+              }
+            }
+          }
         }
       }
     }
-    otherArticles : allContentfulArticle(skip:5, sort:{fields:dateDePublication, order:DESC}, filter:{categorie:{eq:"Soudanais en France"}}){
+    otherArticles : allContentfulArticle(skip:5, sort:{fields:dateDePublication, order:DESC}, filter:{categorie:{eq:"Actualités au Soudan"}}){
         edges{
           node{
             titre
             dateDePublication(formatString:"DD/MM/YYYY")
-            auteur{nom}
             presentation{presentation}
             photoPrincipale{
               fluid{src}
             }
             slug
+            auteur{
+              nom
+              slug
+              description{description}
+              photo{
+                fluid {
+                  ...GatsbyContentfulFluid
+                }
+              }
+            }
           }
         }
       }
   }
   `
 
-const SoudanaisEnFrance = () => {
+const ActualitesAuSoudan = () => {
 
     const {mainArticles, otherArticles} = useStaticQuery(getData)
 
@@ -60,7 +79,7 @@ const SoudanaisEnFrance = () => {
     return (
         <Layout>
             <div className={styles.container}>
-                <h1>Soudanais en France</h1>
+                <h1>Actualités au Soudan</h1>
                 <p className={styles.presentation}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in felis elit. Cras gravida placerat dui, vel eleifend felis convallis ut. Sed cursus ornare dignissim. Praesent venenatis magna nec sollicitudin commodo. Fusce ex libero, ultrices consequat posuere non, volutpat nec nunc. </p>
                 <div className={styles.line}></div>
                 <ArticleList articles={mainArticles.edges}/>
@@ -70,4 +89,4 @@ const SoudanaisEnFrance = () => {
     )
 }
 
-export default SoudanaisEnFrance
+export default ActualitesAuSoudan

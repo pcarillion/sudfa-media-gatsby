@@ -1,0 +1,40 @@
+/* component */
+
+.auteur-section{
+    border: 0.5px var(--darkGrey) solid;
+    height: 200px;
+    /* width: 100%; */
+    padding: 10px 40px;
+    margin: 20px 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.image-div {
+    background-color: black;
+    border-radius: 90px;
+    height: 180px;
+    width: 180px;
+}
+
+.content-div {
+    width: 80%;
+    padding: 0 40px 0 40px;
+}
+
+.content-div h4 {
+    margin: 5px 0;
+}
+
+.content-div h4:hover {
+    text-decoration: underline;
+}
+
+/* page-template */
+
+.main-div {
+    width: 80%;
+    margin: 20px 10%;
+}
