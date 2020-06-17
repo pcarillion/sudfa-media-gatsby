@@ -22,6 +22,10 @@
     margin-left: 10vw;
 }
 
+.logo-div > div {
+    height: 100%;
+}
+
 .main-titles {
     display: flex;
     flex-direction: column;
