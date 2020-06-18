@@ -79,7 +79,7 @@ const Culture = () => {
             <SEO title='Culture' description="catégorie Culture de Sudfa Média"/>
             <div className={styles.container}>
                 <h1>Culture</h1>
-                <p className={styles.presentation}>{presentation.presentation.texteSectionCulture.texteSectionCulture}</p>
+                <p className={styles.presentation}>{presentation.texteSectionCulture.texteSectionCulture}</p>
                 <div className={styles.line}></div>
                 <ArticleList articles={mainArticles.edges}/>
                 <ArticleList2 data={otherArticles}/>
