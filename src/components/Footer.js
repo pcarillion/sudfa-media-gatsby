@@ -33,11 +33,11 @@ const Footer = () => {
                         <div className={styles.mediapart}></div>
                     </a>
             </div>
-            <AniLink paintDrip hex="black" activeStyle={{ fontWeight: "bolder" }} duration={0.8} to='/contact'>
+            <AniLink paintDrip hex="black" activeStyle={{ fontWeight: "bolder" }} duration={0.8} to='/about'>
                     Contact
             </AniLink>
             <div className={styles.copyright}>
-                copyright &copy; Sudfa - 2020 - Tous droits réservés
+                copyright &copy; <AniLink paintDrip hex="black" activeStyle={{ fontWeight: "bolder" }} duration={0.8} to='/about'>Sudfa</AniLink> - 2020 - Tous droits réservés
             </div>
             <div className={styles.copyrightDev}>
                 <a href="https://paul-carillion.net" target="_blank" rel="noreferrer">

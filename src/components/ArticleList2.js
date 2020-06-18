@@ -32,7 +32,7 @@ const ArticleList2 = ({data, title}) => {
                     <AniLink paintDrip hex="black" duration={0.8} to={`/article/${article.node.slug}`}>
                         <h2>{article.node.titre}</h2>
                     </AniLink>
-                    {/* <p className={styles.mobile}>{article.node.dateDePublication}, par {article.node.auteur.nom}</p> */}
+                    <p className={styles.mobile}>{article.node.dateDePublication}, par {article.node.auteur.map((auteur, i) => {return(<AniLink paintDrip hex="black" duration={0.8} to={`/auteur/${auteur.slug}`} className={styles.authorSpan} key={i}> {auteur.nom}</AniLink>)})}</p>
                     <p>{article.node.presentation.presentation}</p>
                 </div>
             </div>
