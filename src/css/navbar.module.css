@@ -17,9 +17,12 @@
 }
 
 .logo-div{
-    height: 80px;
+    /* height: 80px; */
+    height: 100%;
+    min-height: 210px;
     width: 120px;
     margin-left: 10vw;
+    padding: 60px 0;
 }
 
 .logo-div > div {
@@ -148,6 +151,11 @@
         justify-content: center;
         align-items: center;
         width: 90%;
+    }
+
+    .logo-div {
+        min-height: 100px;
+        padding: 0;
     }
 
     .logo-btn{
