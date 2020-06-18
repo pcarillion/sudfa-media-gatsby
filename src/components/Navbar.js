@@ -72,12 +72,14 @@ const Navbar = () => {
         <nav className="full-screen-width column-evenly-center" ref={ref2} >
             <div className='row-between-center full-width' >
                 <div className={styles.logoDiv}>
-                    <Img fluid={contentfulPresentation.logo.fluid} alt="sudfa logo"/>
+                    <AniLink paintDrip hex="black" duration={0.8} to='/'>
+                        <Img fluid={contentfulPresentation.logo.fluid} alt="sudfa logo"/>
+                    </AniLink>
                 </div>
-                <div className={styles.mainTitles}>
+                <AniLink paintDrip hex="black" duration={0.8} to='/' className={styles.mainTitles}>
                     <h1 className={styles.mainTitle}>{site.siteMetadata.title}</h1>
                     <p className={styles.mainDescription}>{site.siteMetadata.description}</p>
-                </div>
+                </AniLink>
                 <div className={styles.socialMediaAndContact}>
                     <div className={styles.socialMediaDiv}>
                         <a className={styles.iconLink} href="https://www.facebook.com/Sudfa-%D8%B5%D8%AF%D9%81%D8%A9-2268469196753720/?ref=page_internal" target="_blank" rel="noreferrer">

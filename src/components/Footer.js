@@ -33,6 +33,9 @@ const Footer = () => {
                         <div className={styles.mediapart}></div>
                     </a>
             </div>
+            <AniLink paintDrip hex="black" activeStyle={{ fontWeight: "bolder" }} duration={0.8} to='/contact'>
+                    Contact
+            </AniLink>
             <div className={styles.copyright}>
                 copyright &copy; Sudfa - 2020 - Tous droits réservés
             </div>
