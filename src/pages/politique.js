@@ -62,12 +62,17 @@ query{
           }
         }
       }
+      presentation: contentfulPresentation(titre:{eq:"Qui sommes nous?"}){
+        textSectionPolitique{
+          textSectionPolitique
+        }
+      }
   }
   `
 
 const Politique = () => {
 
-    const {mainArticles, otherArticles} = useStaticQuery(getData)
+    const {mainArticles, otherArticles, presentation} = useStaticQuery(getData)
 
     console.log(mainArticles.edges)
 
@@ -75,7 +80,7 @@ const Politique = () => {
         <Layout>
             <div className={styles.container}>
                 <h1>Politique</h1>
-                <p className={styles.presentation}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in felis elit. Cras gravida placerat dui, vel eleifend felis convallis ut. Sed cursus ornare dignissim. Praesent venenatis magna nec sollicitudin commodo. Fusce ex libero, ultrices consequat posuere non, volutpat nec nunc. </p>
+                <p className={styles.presentation}>{presentation.textSectionPolitique.textSectionPolitique}</p>
                 <div className={styles.line}></div>
                 <ArticleList articles={mainArticles.edges}/>
                 <ArticleList2 data={otherArticles}/>

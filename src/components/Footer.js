@@ -7,7 +7,7 @@ import links from '../constants/Links'
 // plugins
 import {FaFacebook, FaTwitter} from 'react-icons/fa'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
-
+import { withPrefix } from 'gatsby'
 
 // css
 import styles from "../css/footer.module.css"
@@ -19,7 +19,7 @@ const Footer = () => {
                 <ul className={`${styles.links} full-width list-no-dec full-width`}>
                     {links.map((item, i) => {
                         return (<li key={i} className={styles.navLink}>
-                        <AniLink paintDrip hex="black" duration={0.8} to={item.path}>{item.text}</AniLink>
+                        <AniLink paintDrip hex="black" activeStyle={{ fontWeight: "bolder" }} duration={0.8} to={item.path}>{item.text}</AniLink>
                         </li>)
                     })}
                 </ul>
@@ -44,6 +44,7 @@ const Footer = () => {
                     <div className={styles.logoDev}></div>
                 </a>
             </div>
+            <script src={withPrefix('../script.js')}/>
         </div>
     )
 }

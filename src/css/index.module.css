@@ -12,7 +12,8 @@
     width: 80vw;
     grid-template-columns: 26vw 26vw 28vw;
     grid-template-rows: auto auto auto auto;
-    margin: 20px 10vw 20px 10vw;
+    margin: 0 10vw 20px 10vw;
+    padding-top: 52px;
 }
 
 .main-section{

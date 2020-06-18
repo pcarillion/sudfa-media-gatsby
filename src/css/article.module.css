@@ -9,6 +9,16 @@
     font-style: italic;
 }
 
+.presentation {
+    margin: 20px 80px;
+    line-height: 1.7;
+    font-size: 19px;
+}
+
+.legend {
+    font-style: italic;
+}
+
 .date-and-author {
     margin: 20px 0;
     font-size: 19px;
@@ -31,6 +41,7 @@
 article > * {
     margin: 20px 80px;
     font-size: 19px;
+    line-height: 1.7;
 }
 
 .signature {

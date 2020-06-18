@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import {graphql, useStaticQuery} from 'gatsby'
 
 
@@ -11,6 +11,7 @@ import {FaFacebook, FaTwitter, FaAlignCenter} from 'react-icons/fa'
 
 // js
 import links from '../constants/Links'
+// import '../script/script'
 
 // css
 import styles from '../css/navbar.module.css'
@@ -34,8 +35,6 @@ const Navbar = () => {
 
     const {site, contentfulPresentation} = useStaticQuery(getData);
 
-    console.log(site)
-
     // nav menu on mobile version
 
     const [isOpen, setNav] = useState(false)
@@ -44,11 +43,34 @@ const Navbar = () => {
         setNav(isOPen => !isOpen)
     }
 
-    console.log(isOpen)
+
+    // stick nav bar
+
+    const [isSticky, setSticky] = useState(false);
+    const ref1 = useRef(null);
+    const ref2 = useRef(null)
+    // const handleScroll = () => {
+    //     console.log(ref1)
+    //     console.log(ref2)
+    //     if (ref1.current) {
+    //         if (ref2.current.getBoundingClientRect().bottom >= 0){
+    //             setSticky(false)
+    //         } else if (ref2.current.getBoundingClientRect().bottom < 0){
+    //             setSticky(true)
+    //         }
+    //     }
+    // };
+
+    // useEffect(() => {
+    //     window.addEventListener('scroll', handleScroll);
+    //     return () => {
+    //     window.removeEventListener('scroll', () => handleScroll);
+    //     };
+    // }, []);
 
     return (
-        <nav className="full-screen-width column-evenly-center">
-            <div className='row-between-center full-width'>
+        <nav className="full-screen-width column-evenly-center" ref={ref2} >
+            <div className='row-between-center full-width' >
                 <div className={styles.logoDiv}>
                     <Img fluid={contentfulPresentation.logo.fluid} alt="sudfa logo"/>
                 </div>
@@ -66,7 +88,7 @@ const Navbar = () => {
                     </a>
                 </div>
             </div>
-            <div className={styles.navMenu}>
+            <div className={`${styles.navMenu} ${isSticky ? 'sticky' : ''}`} id="navbar" ref={ref1}>
                 <button 
                         type="button" 
                         className={styles.logoBtn}
@@ -76,7 +98,7 @@ const Navbar = () => {
                 <ul className={isOpen?`${styles.navLinksToggled}`:`${styles.navLinks} ${styles.hiddenLinks}`}>
                     {links.map((item, i) => {
                         return (<li key={i} className={styles.navLink}>
-                        <AniLink paintDrip hex="black" duration={0.8} to={item.path}>{item.text}</AniLink>
+                        <AniLink activeStyle={{ fontWeight: "bolder" }} paintDrip hex="black" duration={0.8} to={item.path}>{item.text}</AniLink>
                         </li>)
                     })}
                 </ul>

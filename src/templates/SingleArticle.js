@@ -11,25 +11,42 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Img from 'gatsby-image'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
-// css
+// css and script
 import styles from '../css/article.module.css'
 
 
 const SingleArticle = ({data}) => {
 
-    const {titre, dateDePublication, auteur, categorie, article:{json}, photoPrincipale} = data.article
+    const {titre, presentation, dateDePublication, auteur, categorie, article:{json}, photoPrincipale} = data.article
 
-    console.log(auteur)
 
-    console.log(data.autresArticles)
+    const images = data.images.edges
+
+    console.log(images)
+
+    const options = {
+      renderNode : {
+        "embedded-asset-block":(node)=> {
+          let file
+          for (let i = 0; i < images.length; i ++){
+            if (images[i].node.contentful_id === node.data.target.sys.contentful_id){
+              file = images[i].node
+            }
+          }
+          return (<div className="image-in-article" ><img src={file.file.url}/> <p>{file.description}</p></div>)
+        }
+      }
+    }
 
     return (
         <Layout>
             <div className={styles.container}>
                 <h1>{titre}</h1>
                 <p className={styles.dateAndAuthor}>{dateDePublication} - par {auteur.map((auteur, i) => {return(<AniLink paintDrip hex="black" duration={0.8} to={`/auteur/${auteur.slug}`} className={styles.authorSpan} key={i}>{auteur.nom}</AniLink>)})} -  {categorie}</p>
+                <p className={styles.presentation}>{presentation.presentation}</p>
                 <Img fluid={photoPrincipale.fluid}/>
-                <article>{documentToReactComponents(json)}</article>
+                <p className={styles.legend}>{photoPrincipale.description}</p>
+                <article>{documentToReactComponents(json, options)}</article>
                 {auteur.map((auteur, i) => {
                   return (
                     <Auteur data={auteur}/>
@@ -47,8 +64,10 @@ query getArticles($slug:String, $categorie:String){
     titre
     dateDePublication(formatString:"DD/MM/YYYY")
     categorie
+    presentation{presentation}
     article{json}
     photoPrincipale{
+        description
         fluid{
             ...GatsbyContentfulFluid
         }
@@ -87,6 +106,16 @@ query getArticles($slug:String, $categorie:String){
       }
     }
     }
+  images: allContentfulAsset{
+    edges{
+      node{
+        contentful_id
+        id
+        file{url}
+        description
+      }
+    }
+  }
 }
 `
 

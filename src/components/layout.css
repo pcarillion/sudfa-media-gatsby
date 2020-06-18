@@ -50,7 +50,18 @@ h6 {
   /* letter-spacing: var(--mainSpacing); */
 }
 
+.sticky{
+    position: sticky;
+    top: 0;
+    width: 80vw;
+    background-color: white;
+    z-index: 20;
+    transition: position 1s;
+}
 
+.sticky + div {
+    padding-top: 52px;
+}
 
 /* general classes */
 
@@ -70,6 +81,32 @@ h6 {
     content:',';
 }
 
+.image-in-article{
+    width: calc(80vw - 300px);
+    margin: 30px 150px;
+}
+
+
+.image-in-article > img{
+    width: 100%;
+}
+
+.image-in-article > p{
+    font-size: 0.8rem;
+    font-style: italic;
+
+}
+
+@media screen and (max-width: 640px) {
+    .image-in-article{
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    .image-in-article > * {
+        margin: 0;
+    }
+}
 
 /* flex boxes */
 
