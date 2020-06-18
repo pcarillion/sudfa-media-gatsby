@@ -48,7 +48,7 @@ const SingleArticle = ({data}) => {
                 <p className={styles.presentation}>{presentation.presentation}</p>
                 <Img fluid={photoPrincipale.fluid}/>
                 <p className={styles.legend}>{photoPrincipale.description}</p>
-                <article>{documentToReactComponents(json, options)}</article>
+                <article className={styles.article}>{documentToReactComponents(json, options)}</article>
                 {auteur.map((auteur, i) => {
                   return (
                     <Auteur data={auteur}/>

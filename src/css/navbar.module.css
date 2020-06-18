@@ -110,6 +110,10 @@
     cursor: pointer;
 }
 
+.contact-mobile {
+    display: none;
+}
+
 .logo-btn {
     background: transparent;
     border: none;
@@ -127,11 +131,14 @@
     .main-title {
         text-transform: uppercase;
         margin-top: 24px;
+        margin-right: 5vw;
     }
     
     .main-description {
         margin-top: 5px;
         margin-bottom: 15px;
+        margin-right: 5vw;
+        text-align: right;
     }
 
 
@@ -166,7 +173,7 @@
         margin: 5px 0;
     }
 
-    .social-media-div{
+    .social-media-and-contact{
         display: none;
     }
 
@@ -180,4 +187,11 @@
         justify-content: space-evenly;
         align-items: flex-end;
     }
+
+        
+    .contact-mobile {
+        display: block;
+    }
+
+    
   }

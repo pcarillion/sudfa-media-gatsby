@@ -106,6 +106,7 @@ const Navbar = () => {
                         <AniLink activeStyle={{ fontWeight: "bolder" }} paintDrip hex="black" duration={0.8} to={item.path}>{item.text}</AniLink>
                         </li>)
                     })}
+                    <li className={`${styles.contactMobile} ${styles.navLink}`} ><AniLink activeStyle={{ fontWeight: "bolder" }} paintDrip hex="black" duration={0.8} to='/about'>Contact</AniLink></li>
                 </ul>
             </div>
         </nav>

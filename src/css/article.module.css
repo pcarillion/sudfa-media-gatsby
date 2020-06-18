@@ -44,6 +44,10 @@ article > * {
     line-height: 1.7;
 }
 
+.article a {
+    text-decoration: underline;  
+}
+
 .signature {
     border: none;
     width: 100%;
@@ -64,6 +68,10 @@ article > * {
     .container > h1 {
         margin: 10px ;
         font-size: 25px;
+    }
+
+    .presentation {
+        margin: 20px 0;
     }
     
     .container > p:first-of-type {
