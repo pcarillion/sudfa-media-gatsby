@@ -50,6 +50,7 @@ query getData($slug:String) {
         titre
         auteur {
             nom
+            slug
         }
         slug
         dateDePublication(formatString:"DD/MM/YYYY")
