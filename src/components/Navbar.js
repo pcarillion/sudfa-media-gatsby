@@ -78,14 +78,19 @@ const Navbar = () => {
                     <h1 className={styles.mainTitle}>{site.siteMetadata.title}</h1>
                     <p className={styles.mainDescription}>{site.siteMetadata.description}</p>
                 </div>
-                <div className={styles.socialMediaDiv}>
-                    <a className={styles.iconLink} href="https://www.facebook.com/Sudfa-%D8%B5%D8%AF%D9%81%D8%A9-2268469196753720/?ref=page_internal" target="_blank" rel="noreferrer">
-                        <FaFacebook className={styles.icon}/>
-                    </a>
-                    {/* <FaTwitter className={styles.icon}/> */}
-                    <a href="https://blogs.mediapart.fr/sudfa" target="_blank" rel="noreferrer">
-                        <div className={styles.mediapart}></div>
-                    </a>
+                <div className={styles.socialMediaAndContact}>
+                    <div className={styles.socialMediaDiv}>
+                        <a className={styles.iconLink} href="https://www.facebook.com/Sudfa-%D8%B5%D8%AF%D9%81%D8%A9-2268469196753720/?ref=page_internal" target="_blank" rel="noreferrer">
+                            <FaFacebook className={styles.icon}/>
+                        </a>
+                        {/* <FaTwitter className={styles.icon}/> */}
+                        <a href="https://blogs.mediapart.fr/sudfa" target="_blank" rel="noreferrer">
+                            <div className={styles.mediapart}></div>
+                        </a>
+                    </div>
+                    <AniLink className={styles.contact} activeStyle={{ display: "none" }} paintDrip hex="black" duration={0.8} to='/about'>
+                        Contact
+                    </AniLink>
                 </div>
             </div>
             <div className={`${styles.navMenu} ${isSticky ? 'sticky' : ''}`} id="navbar" ref={ref1}>

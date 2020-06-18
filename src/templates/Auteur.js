@@ -4,7 +4,7 @@ import React from 'react'
 import Layout from '../components/Layout'
 import AuteurPres from '../components/Author/Author'
 import List from '../components/ArticleList2'
-
+import SEO from '../components/SEO'
 
 // css
 
@@ -21,6 +21,7 @@ const Auteur = ({data}) => {
 
     return (
         <Layout>
+            <SEO title={data.auteur.nom} description="auteur de Sudfa Média"/>
             <div className={styles.mainDiv}>
                 <AuteurPres data={data.auteur}/>
                 <List data={data.articles} title="Ses articles"/>

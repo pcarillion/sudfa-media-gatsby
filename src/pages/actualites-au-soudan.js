@@ -6,6 +6,8 @@ import {graphql, useStaticQuery} from "gatsby"
 import Layout from '../components/Layout'
 import ArticleList from '../components/ArticleList'
 import ArticleList2 from '../components/ArticleList2'
+import SEO from '../components/SEO'
+
 
 
 // css
@@ -83,6 +85,7 @@ const ActualitesAuSoudan = () => {
 
     return (
         <Layout>
+        <SEO title='Actualités au Soudan' description="catégorie actualités au Soudan de Sudfa Média"/>
             <div className={styles.container}>
                 <h1>Actualités au Soudan</h1>
                 <p className={styles.presentation}>{presentation.texteSectionActualite.texteSectionActualite}</p>

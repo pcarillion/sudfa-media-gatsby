@@ -9,6 +9,7 @@ import BackgroundImage from 'gatsby-background-image'
 
 // js
 import Layout from '../components/Layout'
+import SEO from '../components/SEO'
 import Contact from '../components/About/Contact'
 
 
@@ -38,6 +39,7 @@ const About = () => {
 
     return (
         <Layout>
+        <SEO title="A propos" description="Présentation de Sudfa et contact"/>
             <div className={styles.container}>
               <h1>{presentation.titre}</h1>
               <article>{documentToReactComponents(presentation.versionLongue.json)}</article>

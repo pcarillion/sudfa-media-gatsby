@@ -5,6 +5,7 @@ import React from 'react'
 import Layout from '../components/Layout'
 import List2 from '../components/ArticleList2'
 import Auteur from '../components/Author/Author'
+import SEO from '../components/SEO'
 
 // plugins
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
@@ -40,6 +41,7 @@ const SingleArticle = ({data}) => {
 
     return (
         <Layout>
+            <SEO title={titre} description={`article de Sudfa Média dans la catégorie ${categorie}`}/>
             <div className={styles.container}>
                 <h1>{titre}</h1>
                 <p className={styles.dateAndAuthor}>{dateDePublication} - par {auteur.map((auteur, i) => {return(<AniLink paintDrip hex="black" duration={0.8} to={`/auteur/${auteur.slug}`} className={styles.authorSpan} key={i}>{auteur.nom}</AniLink>)})} -  {categorie}</p>

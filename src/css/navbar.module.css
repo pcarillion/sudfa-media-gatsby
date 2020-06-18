@@ -17,7 +17,7 @@
 }
 
 .logo-div{
-    height: 70px;
+    height: 80px;
     width: 120px;
     margin-left: 10vw;
 }
@@ -33,11 +33,28 @@
     align-items: center;
 }
 
+.social-media-and-contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
 .social-media-div{
     margin-right: 10vw;
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
+    align-items: center;
+
+}
+
+.contact {
+    margin-right: 10vw;
+}
+
+.contact:hover{
+    text-decoration: underline;
 }
 
 .icon{
@@ -162,6 +179,5 @@
         flex-direction: column;
         justify-content: space-evenly;
         align-items: flex-end;
-        margin-right: 5vw;
     }
   }

@@ -6,6 +6,7 @@ import {graphql, useStaticQuery} from "gatsby"
 import Layout from '../components/Layout'
 import ArticleList from '../components/ArticleList'
 import ArticleList2 from '../components/ArticleList2'
+import SEO from '../components/SEO'
 
 // css
 import styles from '../css/category.module.css'
@@ -78,6 +79,7 @@ const Politique = () => {
 
     return (
         <Layout>
+            <SEO title='Politique' description="catégorie Politique de Sudfa Média"/>
             <div className={styles.container}>
                 <h1>Politique</h1>
                 <p className={styles.presentation}>{presentation.textSectionPolitique.textSectionPolitique}</p>
