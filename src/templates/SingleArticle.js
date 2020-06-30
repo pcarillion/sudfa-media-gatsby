@@ -18,7 +18,7 @@ import styles from '../css/article.module.css'
 
 const SingleArticle = ({data}) => {
 
-    const {titre, presentation, dateDePublication, auteur, categorie, article:{json}, photoPrincipale} = data.article
+    const {titre, presentation, slug, dateDePublication, auteur, categorie, article:{json}, photoPrincipale} = data.article
 
 
     const images = data.images.edges
@@ -54,7 +54,7 @@ const SingleArticle = ({data}) => {
                     <Auteur data={auteur}/>
                   )
                 })}
-                <List2 data={data.autresArticles} title={categorie}/>
+                <List2 data={data.autresArticles} title={categorie} slug={`/article/${slug}`}/>
             </div>
         </Layout>
     )
@@ -67,6 +67,7 @@ query getArticles($slug:String, $categorie:String){
     dateDePublication(formatString:"DD/MM/YYYY")
     categorie
     presentation{presentation}
+    slug
     article{json}
     photoPrincipale{
         description
@@ -85,7 +86,7 @@ query getArticles($slug:String, $categorie:String){
       }
     }
   }
-  autresArticles: allContentfulArticle(limit:4, filter:{categorie:{eq:$categorie}},sort:{fields:dateDePublication, order:DESC}){
+  autresArticles: allContentfulArticle(filter:{categorie:{eq:$categorie}},sort:{fields:dateDePublication, order:DESC}){
     edges{
       node{
         titre
