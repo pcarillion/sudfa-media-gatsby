@@ -17,7 +17,7 @@ import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 const getData = graphql`
 query{
-    mainArticles : allContentfulArticle(limit:5, sort:{fields:dateDePublication, order:DESC}, filter:{categorie:{eq:"Culture"}}){
+    mainArticles : allContentfulArticle(limit:5, sort:{fields:dateDePublication, order:DESC}, filter:{categorie:{eq:"Histoire"}}){
       edges{
         node{
           titre
@@ -82,8 +82,8 @@ const Histoire = () => {
                 <h1>Histoire</h1>
                 <p className={styles.presentation}>{presentation.texteSectionHistoire.texteSectionHistoire}</p>
                 <div className={styles.line}></div>
-                <ArticleList articles={mainArticles.edges}/>
-                {otherArticles.edges.length >0 && <ArticleList2 data={otherArticles} slug='/histoire'/>}
+                {otherArticles.edges.length > 5 ? <ArticleList articles={mainArticles.edges}/>: <p>Cette section est en cours de construction.</p>}
+                {otherArticles.edges.length > 0 && <ArticleList2 data={otherArticles} slug='/histoire'/>}
             </div>
         </Layout>
     )
