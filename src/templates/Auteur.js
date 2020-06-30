@@ -24,7 +24,8 @@ const Auteur = ({data}) => {
             <SEO title={data.auteur.nom} description="auteur de Sudfa Média"/>
             <div className={styles.mainDiv}>
                 <AuteurPres data={data.auteur}/>
-                <List data={data.articles} title="Ses articles"/>
+                <span ></span>
+                <List data={data.articles} title="Ses articles" isAuteur slug={`/auteur/${data.auteur.slug}`}/>
             </div>
         </Layout>
     )
@@ -44,7 +45,7 @@ query getData($slug:String) {
             }
         }
     }
-    articles: allContentfulArticle(filter:{auteur:{elemMatch:{slug:{eq:$slug}}}}){
+    articles: allContentfulArticle(filter:{auteur:{elemMatch:{slug:{eq:$slug}}}}, sort:{fields:dateDePublication, order:DESC}){
     edges{
       node{
         titre

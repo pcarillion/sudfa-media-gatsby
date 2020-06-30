@@ -82,7 +82,7 @@ const Culture = () => {
                 <p className={styles.presentation}>{presentation.texteSectionCulture.texteSectionCulture}</p>
                 <div className={styles.line}></div>
                 <ArticleList articles={mainArticles.edges}/>
-                <ArticleList2 data={otherArticles}/>
+                {otherArticles.edges.length >0 && <ArticleList2 data={otherArticles} slug='/culture'/>}
             </div>
         </Layout>
     )

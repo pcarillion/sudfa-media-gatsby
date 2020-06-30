@@ -91,7 +91,7 @@ const ActualitesAuSoudan = () => {
                 <p className={styles.presentation}>{presentation.texteSectionActualite.texteSectionActualite}</p>
                 <div className={styles.line}></div>
                 <ArticleList articles={mainArticles.edges}/>
-                <ArticleList2 data={otherArticles}/>
+                {otherArticles.edges.length >0 && <ArticleList2 data={otherArticles} slug='/actualites-au-soudan'/>}
             </div>
         </Layout>
     )

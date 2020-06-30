@@ -8,21 +8,19 @@
 
 .main-title {
     text-transform: uppercase;
-    margin-top: 30px;
+    margin: 0;
+    font-size: 25px;
+    height: 25px;
 }
 
 .main-description {
     margin-top: 10px;
-    margin-bottom: 50px;
 }
 
 .logo-div{
-    /* height: 80px; */
-    height: 100%;
-    min-height: 210px;
     width: 120px;
     margin-left: 10vw;
-    padding: 60px 0;
+    height: 110px;
 }
 
 .logo-div > div {
@@ -41,7 +39,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    height: 110px;
 }
 
 .social-media-div{
@@ -54,6 +52,7 @@
 
 .contact {
     margin-right: 10vw;
+    margin-top: 10px;
 }
 
 .contact:hover{

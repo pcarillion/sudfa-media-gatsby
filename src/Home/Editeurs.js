@@ -28,7 +28,7 @@ const Editeurs = () => {
         <section className={styles.editorSection}>
                 <div className={styles.sectionTitleDiv}>
                     <AniLink paintDrip hex="black" duration={0.8} to='/about'>
-                        <h2 className={styles.sectionTitle}>Les éditeurs</h2>
+                        <h2 className={styles.sectionTitle}>Qui sommes-nous</h2>
                     </AniLink>
                     <div className={styles.lineDiv}></div>
                 </div>

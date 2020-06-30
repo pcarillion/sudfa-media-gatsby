@@ -83,7 +83,7 @@ const Histoire = () => {
                 <p className={styles.presentation}>{presentation.texteSectionHistoire.texteSectionHistoire}</p>
                 <div className={styles.line}></div>
                 <ArticleList articles={mainArticles.edges}/>
-                <ArticleList2 data={otherArticles}/>
+                {otherArticles.edges.length >0 && <ArticleList2 data={otherArticles} slug='/histoire'/>}
             </div>
         </Layout>
     )

@@ -46,7 +46,7 @@ const SingleArticle = ({data}) => {
                 <h1>{titre}</h1>
                 <p className={styles.dateAndAuthor}>{dateDePublication} - par {auteur.map((auteur, i) => {return(<AniLink paintDrip hex="black" duration={0.8} to={`/auteur/${auteur.slug}`} className={styles.authorSpan} key={i}>{auteur.nom}</AniLink>)})} -  {categorie}</p>
                 <p className={styles.presentation}>{presentation.presentation}</p>
-                <Img fluid={photoPrincipale.fluid}/>
+                <Img fluid={photoPrincipale.fluid} className={styles.mainPic}/>
                 <p className={styles.legend}>{photoPrincipale.description}</p>
                 <article className={styles.article}>{documentToReactComponents(json, options)}</article>
                 {auteur.map((auteur, i) => {
@@ -85,7 +85,7 @@ query getArticles($slug:String, $categorie:String){
       }
     }
   }
-  autresArticles: allContentfulArticle(limit:4, filter:{categorie:{eq:$categorie}}){
+  autresArticles: allContentfulArticle(limit:4, filter:{categorie:{eq:$categorie}},sort:{fields:dateDePublication, order:DESC}){
     edges{
       node{
         titre
