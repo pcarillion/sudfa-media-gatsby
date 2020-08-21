@@ -17,7 +17,7 @@ const Author = ({data}) => {
             {data.photo && <Image className={styles.imageDiv} fluid={data.photo.fluid}/>}    
             <div className={styles.contentDiv}>
                 <AniLink paintDrip hex="black" duration={0.8} to={`/auteur/${data.slug}`}><h4>{data.nom}</h4></AniLink>
-                <p dangerouslySetInnerHTML={{__html: data.description.description}}></p>
+                {data.description && <p dangerouslySetInnerHTML={{__html: data.description.description}}></p>}
             </div>
         </section>
     )

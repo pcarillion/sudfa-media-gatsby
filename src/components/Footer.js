@@ -22,6 +22,12 @@ const Footer = () => {
                         <AniLink paintDrip hex="black" activeStyle={{ fontWeight: "bolder" }} duration={0.8} to={item.path}>{item.text}</AniLink>
                         </li>)
                     })}
+                    <li className={styles.navLink}>
+                            <AniLink paintDrip hex="black" activeStyle={{ fontWeight: "bolder" }} duration={0.8} to='/auteurs'>Les auteur-e-s</AniLink>
+                    </li>
+                    <li className={styles.navLink}>
+                            <AniLink paintDrip hex="black" activeStyle={{ fontWeight: "bolder" }} duration={0.8} to='/about'>A propos</AniLink>
+                    </li>
                 </ul>
             </div>
             <div className={styles.socialMediaDiv}>

@@ -5,6 +5,7 @@ import {graphql, useStaticQuery} from 'gatsby'
 // plugins
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import BackgroundImage from 'gatsby-background-image'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 
 // js
@@ -43,6 +44,9 @@ const About = () => {
             <div className={styles.container}>
               <h1>{presentation.titre}</h1>
               <article>{documentToReactComponents(presentation.versionLongue.json)}</article>
+              <p>
+                Vous pouvez découvrir <AniLink paintDrip hex="black" activeStyle={{ fontWeight: "bolder" }} duration={0.8} to='/auteurs'>nos auteurs et contributeurs</AniLink>.
+              </p>
               {presentation.image && <BackgroundImage className={styles.image} fluid={presentation.image.fluid}/>}
               <Contact/>
             </div>

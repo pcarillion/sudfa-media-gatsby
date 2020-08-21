@@ -63,3 +63,14 @@
     margin: 20px 10%;
 }
 
+/* page auteurs */
+
+.list-authors {
+    width: 80vw;
+    margin: 20px 10vw;
+}
+
+.list-authors h1 {
+    width: 100%;
+    text-align: center;
+}
