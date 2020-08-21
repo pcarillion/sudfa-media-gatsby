@@ -80,7 +80,7 @@ const Histoire = () => {
 
     return (
         <Layout>
-                <SEO title='Histoire' description="catégorie Histoire de Sudfa Média"/>
+                <SEO title='Histoire' description="catégorie Histoire de Sudfa Média" url={url}/>
             <div className={styles.container}>
                 <h1>Histoire</h1>
                 <p className={styles.presentation}>{presentation.texteSectionHistoire.texteSectionHistoire}</p>

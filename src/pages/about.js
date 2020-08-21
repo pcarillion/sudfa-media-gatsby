@@ -12,6 +12,8 @@ import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import Contact from '../components/About/Contact'
+import Decouvrez from '../components/Author/Decouvrez'
+
 
 
 // css
@@ -40,13 +42,11 @@ const About = () => {
 
     return (
         <Layout>
-        <SEO title="A propos" description="Présentation de Sudfa et contact"/>
+        <SEO title="A propos" description="Présentation de Sudfa et contact" url={url}/>
             <div className={styles.container}>
               <h1>{presentation.titre}</h1>
               <article>{documentToReactComponents(presentation.versionLongue.json)}</article>
-              <p>
-                Vous pouvez découvrir <AniLink paintDrip hex="black" activeStyle={{ fontWeight: "bolder" }} duration={0.8} to='/auteurs'>nos auteurs et contributeurs</AniLink>.
-              </p>
+              <Decouvrez/>
               {presentation.image && <BackgroundImage className={styles.image} fluid={presentation.image.fluid}/>}
               <Contact/>
             </div>

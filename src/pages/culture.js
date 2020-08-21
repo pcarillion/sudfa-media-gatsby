@@ -78,7 +78,7 @@ const Culture = () => {
 
     return (
         <Layout>
-            <SEO title='Culture' description="catégorie Culture de Sudfa Média"/>
+            <SEO title='Culture' description="catégorie Culture de Sudfa Média" url={url}/>
             <div className={styles.container}>
                 <h1>Culture</h1>
                 <p className={styles.presentation}>{presentation.texteSectionCulture.texteSectionCulture}</p>

@@ -12,18 +12,20 @@ import Politique from '../Home/Politique'
 import Editeurs from '../Home/Editeurs'
 import Culture from '../Home/Culture'
 import SEO from '../components/SEO'
+import Decouvrez from '../components/Author/Decouvrez'
 
 export default (data) => (
 
     
     <Layout>
-        <SEO title="Accueil" description="page d'accueil de Sudfa Média"/>
+        <SEO title="Sudfa Media" description="Petit média franco-soudanais"/>
         <div className={styles.homeDiv}>
             <Main/>
             <Editeurs/>
             <Politique/>
             <Culture/>
         </div>
+        <Decouvrez/>
     </Layout>
 )
 

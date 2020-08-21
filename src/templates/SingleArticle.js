@@ -43,7 +43,7 @@ const SingleArticle = ({data}) => {
 
     return (
         <Layout>
-            <SEO title={titre} description={`${categorie}`} img={photoPrincipale.fluid.src} url={url}/>
+            <SEO title={titre} description={`${categorie}`} img={photoPrincipale.fluid.src} url={url} url={url}/>
             <div className={styles.container}>
                 <h1>{titre}</h1>
                 <p className={styles.dateAndAuthor}>{dateDePublication} - par {auteur.map((auteur, i) => {return(<AniLink paintDrip hex="black" duration={0.8} to={`/auteur/${auteur.slug}`} className={styles.authorSpan} key={i}>{auteur.nom}</AniLink>)})} -  {categorie}</p>

@@ -3,6 +3,7 @@ import React from 'react'
 // js
 import Layout from '../components/Layout'
 import AuteurPres from '../components/Author/Author'
+import Decouvrez from '../components/Author/Decouvrez'
 import List from '../components/ArticleList2'
 import SEO from '../components/SEO'
 
@@ -21,12 +22,13 @@ const Auteur = ({data}) => {
 
     return (
         <Layout>
-            <SEO title={data.auteur.nom} description="auteur de Sudfa Média"/>
+            <SEO title={data.auteur.nom} description="Auteur-e de Sudfa Média" url={url}/>
             <div className={styles.mainDiv}>
                 <AuteurPres data={data.auteur}/>
                 <span ></span>
                 <List data={data.articles} title="Ses articles" isAuteur slug={`/auteur/${data.auteur.slug}`}/>
             </div>
+            <Decouvrez/>
         </Layout>
     )
 }

@@ -79,7 +79,7 @@ const Politique = () => {
 
     return (
         <Layout>
-            <SEO title='Politique' description="catégorie Politique de Sudfa Média"/>
+            <SEO title='Politique' description="catégorie Politique de Sudfa Média" url={url}/>
             <div className={styles.container}>
                 <h1>Politique</h1>
                 <p className={styles.presentation}>{presentation.textSectionPolitique.textSectionPolitique}</p>

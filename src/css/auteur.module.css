@@ -74,3 +74,18 @@
     width: 100%;
     text-align: center;
 }
+
+/* composant découvrez */
+
+.decouvrez {
+    padding: 40px;
+    text-align: center;
+    font-size: 1.3rem;
+    border: 0.5px solid var(--darkGrey);
+    margin: 20px 10vw 20px 10vw;
+    width: 80vw;
+}
+
+.decouvrez > a:hover {
+    text-decoration: underline;
+}
