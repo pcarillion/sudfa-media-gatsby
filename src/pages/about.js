@@ -36,7 +36,7 @@ const About = () => {
 
     const{presentation} = useStaticQuery(getData)
 
-    console.log(presentation)
+    const url = typeof window !== 'undefined' ? window.location.href : '';
 
     return (
         <Layout>

@@ -74,6 +74,8 @@ const Culture = () => {
 
     const {mainArticles, otherArticles, presentation} = useStaticQuery(getData)
 
+    const url = typeof window !== 'undefined' ? window.location.href : '';
+
     return (
         <Layout>
             <SEO title='Culture' description="catégorie Culture de Sudfa Média"/>

@@ -75,6 +75,9 @@ const Histoire = () => {
 
     const {mainArticles, otherArticles, presentation} = useStaticQuery(getData)
 
+    const url = typeof window !== 'undefined' ? window.location.href : '';
+
+
     return (
         <Layout>
                 <SEO title='Histoire' description="catégorie Histoire de Sudfa Média"/>

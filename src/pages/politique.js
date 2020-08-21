@@ -75,7 +75,7 @@ const Politique = () => {
 
     const {mainArticles, otherArticles, presentation} = useStaticQuery(getData)
 
-    console.log(mainArticles.edges)
+    const url = typeof window !== 'undefined' ? window.location.href : '';
 
     return (
         <Layout>

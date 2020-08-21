@@ -39,9 +39,11 @@ const SingleArticle = ({data}) => {
       }
     }
 
+    console.log(photoPrincipale);
+
     return (
         <Layout>
-            <SEO title={titre} description={`${categorie}`} img={photoPrincipale.fluid} url={url}/>
+            <SEO title={titre} description={`${categorie}`} img={photoPrincipale.fluid.src} url={url}/>
             <div className={styles.container}>
                 <h1>{titre}</h1>
                 <h2>{url}</h2>

@@ -17,7 +17,7 @@ import styles from '../css/auteur.module.css'
 const Auteur = ({data}) => {
 
 
-    console.log(data.auteur)
+    const url = typeof window !== 'undefined' ? window.location.href : '';
 
     return (
         <Layout>
