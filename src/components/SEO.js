@@ -17,7 +17,7 @@ query{
   }
 `
 
-const SEO = ({title, description}) => {
+const SEO = ({title, description, img, url}) => {
 
     const {site} = useStaticQuery(getData);
 
@@ -29,11 +29,11 @@ const SEO = ({title, description}) => {
             <meta rel="icon" href={image} />
             <meta name="image" content={image}/>
             {/* facebook cards */}
-            <meta property="og:url" content={siteUrl}/>
+            <meta property="og:url" content={url? url: siteUrl}/>
             <meta property="og:type" content="website"/>
             <meta property="og:title" content={title}/>
             <meta property="og:description" content={description}/>
-            <meta property="og:image" content={`${siteUrl}${image}`}/>
+            <meta property="og:image" content={img? img : `${siteUrl}${image}`}/>
             <meta property="og:image:width" content='400'/>
             <meta property="og:image:height" content='300'/>
         </Helmet>

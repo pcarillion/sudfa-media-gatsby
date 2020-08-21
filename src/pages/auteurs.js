@@ -37,11 +37,12 @@ const Auteurs = () => {
 
     const authorsList = auteurs.allContentfulAuteur.edges
 
-    console.log(authorsList)
+
+    const url = typeof window !== 'undefined' ? window.location.href : '';
     
     return (
         <Layout>
-            <SEO title='Les Auteur-e-s' description="les auteur-e-s de Sudfa Média"/>
+            <SEO title='Les Auteur-e-s' description="les auteur-e-s de Sudfa Média" url={url}/>
             <div className={styles.listAuthors}>
                 <h1>Les Auteur-e-s</h1>
                 {authorsList.map((author, i) => {

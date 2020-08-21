@@ -23,7 +23,7 @@ const SingleArticle = ({data}) => {
 
     const images = data.images.edges
 
-    console.log(images)
+    const url = typeof window !== 'undefined' ? window.location.href : '';
 
     const options = {
       renderNode : {
@@ -41,7 +41,7 @@ const SingleArticle = ({data}) => {
 
     return (
         <Layout>
-            <SEO title={titre} description={`article de Sudfa Média dans la catégorie ${categorie}`}/>
+            <SEO title={titre} description={`${categorie}`} img={photoPrincipale.fluid} url={url}/>
             <div className={styles.container}>
                 <h1>{titre}</h1>
                 <p className={styles.dateAndAuthor}>{dateDePublication} - par {auteur.map((auteur, i) => {return(<AniLink paintDrip hex="black" duration={0.8} to={`/auteur/${auteur.slug}`} className={styles.authorSpan} key={i}>{auteur.nom}</AniLink>)})} -  {categorie}</p>
