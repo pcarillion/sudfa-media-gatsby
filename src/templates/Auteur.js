@@ -22,7 +22,7 @@ const Auteur = ({data}) => {
 
     return (
         <Layout>
-            <SEO title={data.auteur.nom} description="Auteur-e de Sudfa Média" url={url}/>
+            <SEO title={data.auteur.nom} description="Auteur-e de Sudfa Média" url={url} img={data.auteur.photo.fluid.src}/>
             <div className={styles.mainDiv}>
                 <AuteurPres data={data.auteur}/>
                 <span ></span>
